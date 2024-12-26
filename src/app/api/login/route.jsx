@@ -1,18 +1,17 @@
-import prisma from "../../../../prisma/prisma";
 import bcrypt from "bcrypt";
+import { userData } from "@/app/data/userData";
 
 const setCorsHeaders = (res) => {
-  res.headers.set("Access-Control-Allow-Origin", "*"); // Allow all origins (use specific domains in production)
-  res.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS"); // Allow only certain methods
+  res.headers.set("Access-Control-Allow-Origin", "*");
+  res.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.headers.set(
     "Access-Control-Allow-Headers",
     "Content-Type, Authorization"
-  ); // Allow necessary headers
-  res.headers.set("Access-Control-Max-Age", "86400"); // Cache preflight response
+  );
+  res.headers.set("Access-Control-Max-Age", "86400");
 };
 
 export async function OPTIONS() {
-  // Preflight response for CORS
   const response = new Response(null, { status: 204 });
   setCorsHeaders(response);
   return response;
@@ -28,21 +27,18 @@ export async function POST(req) {
 
     console.log("Attempting login with:", { email, role });
 
-    const newUser = await prisma.newUser.findFirst({
-      where: { email, role },
-    });
+    // Check if the user exists in userData
+    const user = userData[email];
 
-    console.log("User found:", newUser);
-
-    if (!newUser) {
+    if (!user || user.category !== role) {
       console.log("No user found with the provided email and role.");
       const response = new Response("Invalid credentials", { status: 401 });
       setCorsHeaders(response);
       return response;
     }
 
-    // Verify password
-    const isPasswordValid = newUser.password;
+    // Verify the password
+    const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
     if (!isPasswordValid) {
       console.log("Invalid password.");
       const response = new Response("Invalid credentials", { status: 401 });
@@ -55,10 +51,10 @@ export async function POST(req) {
       JSON.stringify({
         message: `Welcome ${role}!`,
         user: {
-          email: newUser.email,
-          role: newUser.role,
-          name: newUser.fullName,
-          id: newUser.id,
+          email: user.email,
+          role: user.category, // Assuming the role is stored as 'category' in userData
+          name: user.name,
+          id: user.id,
         },
       }),
       { status: 200, headers: { "Content-Type": "application/json" } }
@@ -77,7 +73,8 @@ export async function POST(req) {
 
 export async function GET(req) {
   try {
-    const users = await prisma.newUser.findMany();
+    // Optionally, you could list users from userData here if needed.
+    const users = Object.values(userData);
     const response = new Response(JSON.stringify(users), { status: 200 });
     setCorsHeaders(response);
     return response;

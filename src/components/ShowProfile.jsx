@@ -64,10 +64,10 @@ const ShowProfile = () => {
       {/* Profile Header */}
       <div className="text-center mb-6">
         <div className="w-20 h-20 mx-auto rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-2xl">
-          {profile.fullName ? profile.fullName[0].toUpperCase() : "?"}
+          {profile.name ? profile.name[0].toUpperCase() : "?"}
         </div>
         <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mt-2">
-          {profile.fullName}
+          {profile.name}
         </h2>
         <p className="text-gray-500 text-sm sm:text-lg">{profile.email}</p>
       </div>
@@ -76,7 +76,7 @@ const ShowProfile = () => {
       <div className="space-y-4 text-sm sm:text-lg">
         <p>
           <strong>Name:</strong>
-          <span className="ml-4 font-semibold">{profile.fullName}</span>
+          <span className="ml-4 font-semibold">{profile.name}</span>
         </p>
         <p>
           <strong>Email Address:</strong>

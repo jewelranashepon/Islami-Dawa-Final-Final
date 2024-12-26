@@ -37,15 +37,15 @@ export default function Register() {
           {/* Full Name */}
           <div>
             <label
-              htmlFor="fullName"
+              htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
               Full Name
             </label>
             <input
               type="text"
-              id="fullName"
-              name="fullName"
+              id="name"
+              name="name"
               placeholder="Enter your Full name"
               required
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
