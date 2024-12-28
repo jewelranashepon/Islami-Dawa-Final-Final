@@ -154,5 +154,18 @@ export const userData = {
     "phone": "0123456789",
     "email": "user1@gmail.com",
     "passwordHash": "$2b$10$fOK/0cZ3cByIKpn61QmqUOl07U1R9JRml1QrVQbnoUVvxJKMCjhke"
+  },
+  "user2@gmail.com": {
+    "id": 1735360261066,
+    "name": "User2",
+    "category": "daye",
+    "division": "45_ময়মনসিংহ",
+    "district": "72_নেত্রকোণা",
+    "upazila": "487_খালিয়াজুরী",
+    "union": "4499_চাকুয়া",
+    "area": "Kustia",
+    "phone": "0123456789",
+    "email": "user2@gmail.com",
+    "passwordHash": "$2b$10$IvorOMl.66MxYLgFzImJIuQUDSxGHhcXbS4j.1/iCXStAZ4wO52je"
   }
 };
