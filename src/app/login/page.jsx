@@ -41,25 +41,25 @@ export default function LoginForm() {
         // Redirect based on role
         switch (result.user.role) {
           case "centraladmin":
-            router.push("/admin/user");
+            router.push("/admin");
             break;
           case "daye":
             router.push("/dashboard");
             break;
           case "divisionadmin":
-            router.push("/admin/user");
+            router.push("/admin");
             break;
           case "districtadmin":
-            router.push("/admin/user");
+            router.push("/admin");
             break;
           case "areaadmin":
             router.push("/admin");
             break;
           case "upozilaadmin":
-            router.push("/admin/user");
+            router.push("/admin");
             break;
           case "unionadmin":
-            router.push("/admin/user");
+            router.push("/admin");
             break;
           default:
             setErrorMessage("Unknown role. Please contact support.");
@@ -75,7 +75,6 @@ export default function LoginForm() {
       setLoading(false);
     }
   };
-
 
   return (
     <>

@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { useSelectedUser } from "@/providers/treeProvider"; // No changes if this is a custom hook
+import { useRouter } from "next/navigation";
 
 export default function OnItemClick() {
   const [userEmail, setUserEmail] = React.useState("");
@@ -21,6 +22,8 @@ export default function OnItemClick() {
       setUserEmail(storedEmail);
     }
   }, []);
+
+  const router = useRouter();
 
   let idCounter = 1;
   const generateUniqueId = () => idCounter++;
@@ -1080,9 +1083,31 @@ export default function OnItemClick() {
 
   const treeData = userEmail ? getFilteredTreeData(userEmail) : [];
 
-  const renderTree = (nodes) => {
-    if (!nodes || !Array.isArray(nodes)) return null;
+  // const renderTree = (nodes) => {
+  //   if (!nodes || !Array.isArray(nodes)) return null;
 
+  //   return nodes.map((node) => (
+  //     <TreeItem
+  //       key={node.id}
+  //       itemId={node.id}
+  //       label={node.label}
+  //       onClick={() => {
+  //         if (node?.user) {
+  //           setSelectedUser(node.user);
+  //         }
+  //       }}
+  //     >
+  //       {Array.isArray(node.children) && renderTree(node.children)}
+  //     </TreeItem>
+  //   ));
+  // };
+
+  // Helper function to collect all IDs
+
+  const renderTree = (nodes) => {
+  
+    if (!nodes || !Array.isArray(nodes)) return null;
+  
     return nodes.map((node) => (
       <TreeItem
         key={node.id}
@@ -1090,7 +1115,8 @@ export default function OnItemClick() {
         label={node.label}
         onClick={() => {
           if (node?.user) {
-            setSelectedUser(node.user);
+            setSelectedUser(node.user); // Update the selected user
+            router.push("/admin"); // Navigate to the /admin route
           }
         }}
       >
@@ -1098,8 +1124,8 @@ export default function OnItemClick() {
       </TreeItem>
     ));
   };
+  
 
-  // Helper function to collect all IDs
   const getAllIds = (nodes) => {
     let ids = [];
     nodes.forEach((node) => {

@@ -81,6 +81,10 @@ const ImpersonateSidebar = () => {
     },
   ];
 
+  const navigateToUserPage = () => {
+    router.push("/admin/user");
+  };
+
   return (
     <div className="flex">
       <div className="overflow-y-auto bg-sky-900 scrollbar">
@@ -114,7 +118,7 @@ const ImpersonateSidebar = () => {
         </div>
 
         <div className="overflow-y-auto">
-          {userName && <OnItemClick loggedInUser={userName} />}
+          {userName && <OnItemClick loggedInUser={userName} onItemClick={navigateToUserPage} />}
         </div>
       </div>
 
