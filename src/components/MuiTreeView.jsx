@@ -1123,7 +1123,7 @@ export default function OnItemClick() {
   };
 
   return (
-    <div className="overflow-y-auto bg-sky-800 text-white font-semibold py-4 shrink-0">
+    <div className="overflow-y-auto text-white font-semibold py-4 shrink-0">
       <Stack spacing={2}>
         {/* Toggle Expand/Collapse Button */}
         <div className="flex justify-end px-4">

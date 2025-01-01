@@ -19,3 +19,24 @@
 body {
   font-family: "Mitra Unicode", sans-serif;
 }
+
+/* scrollbar */
+.scrollbar {
+  @apply max-w-full overflow-auto pr-4; /* Enables both vertical and horizontal scrolling */
+}
+
+.scrollbar::-webkit-scrollbar {
+  @apply w-2 h-2; /* Sets both width (for vertical) and height (for horizontal) of the scrollbar */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-700; /* Track color for both scrollbars */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-teal-600; /* Thumb color for both scrollbars */
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-teal-400; /* Thumb color on hover for both scrollbars */
+}

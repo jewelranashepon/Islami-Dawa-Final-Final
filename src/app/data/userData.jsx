@@ -167,5 +167,18 @@ export const userData = {
     "phone": "0123456789",
     "email": "user2@gmail.com",
     "passwordHash": "$2b$10$IvorOMl.66MxYLgFzImJIuQUDSxGHhcXbS4j.1/iCXStAZ4wO52je"
+  },
+  "abc@gmail.com": {
+    "id": 1735360901918,
+    "name": "ABC",
+    "category": "daye",
+    "division": "50_রাজশাহী",
+    "district": "81_রাজশাহী",
+    "upazila": "136_মোহনপুর",
+    "union": "1232_মৌগাছি",
+    "area": "Mirpur",
+    "phone": "0123456789",
+    "email": "abc@gmail.com",
+    "passwordHash": "$2b$10$uyZEBD/s6ZLhkuXIsf77Xu/bk8GOUmCPIatzWmee9JrarFAeD/QNS"
   }
 };

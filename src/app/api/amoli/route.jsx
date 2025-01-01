@@ -1,65 +1,74 @@
-// // app/api/signup/route.js
-// import prisma from "../../../../prisma/prisma";
+import fs from "fs"
+import path from "path"
 
-// export async function POST(req) {
-//   const {
-//     tahajjud,
-//     ayat,
-//     zikir,
-//     ishraq,
-//     jamat,
-//     sirat,
-//     Dua,
-//     ilm,
-//     tasbih,
-//     dayeeAmol,
-//     amoliSura,
-//     ayamroja,
-//     hijbulBahar,
-//   } = await req.json();
+const amoliDataPath = path.join(process.cwd(), "/src/app/data/amoli_muhasaba_user_data.jsx"); 
 
-//   // Basic validation
-//   if (
-//     !tahajjud ||
-//     !ayat ||
-//     !zikir ||
-//     !ishraq ||
-//     !jamat ||
-//     !sirat ||
-//     !Dua ||
-//     !ilm ||
-//     !tasbih ||
-//     !dayeeAmol ||
-//     !amoliSura ||
-//     !ayamroja ||
-//     !hijbulBahar
-//   ) {
-//     return new Response("All fields are required", { status: 400 });
-//   }
+export async function POST(req) {
+    const {
+        tahajjud,
+        ayat,
+        zikir,
+        ishraq,
+        jamat,
+        sirat,
+        Dua,
+        ilm,
+        tasbih,
+        dayeeAmol,
+        amoliSura,
+        ayamroja,
+        hijbulBahar,
+    } = await req.json();
 
-//   try {
-//     // const hashedPassword = await bcrypt.hash(password, 10);
-//     const amolidata = await prisma.amoliMuhasabaData.create({
-//       data: {
-//         tahajjud,
-//         ayat,
-//         zikir,
-//         ishraq,
-//         jamat,
-//         sirat,
-//         Dua,
-//         ilm,
-//         tasbih,
-//         dayeeAmol,
-//         amoliSura,
-//         ayamroja,
-//         hijbulBahar,
-//       },
-//     });
-//     console.log(amolidata);
-//     return new Response(JSON.stringify(amolidata), { status: 201 });
-//   } catch (error) {
-//     console.log(error);
-//     return new Response("user Created Failed", { status: 500 });
-//   }
-// }
+    console.log("Received data:", {
+        tahajjud,
+        ayat,
+        zikir,
+        ishraq,
+        jamat,
+        sirat,
+        Dua,
+        ilm,
+        tasbih,
+        dayeeAmol,
+        amoliSura,
+        ayamroja,
+        hijbulBahar,
+      });
+
+      // Basic validation
+  if (!tahajjud || !ayat || !zikir || !ishraq || !jamat || !sirat || !Dua || !ilm || !tasbih || !dayeeAmol || !amoliSura || !ayamroja || !hijbulBahar) {
+    return new Response("All fields are required", { status: 400 });
+  }
+
+  try{
+     // Read the userData file as plain text
+        const fileContent = fs.readFileSync(userDataPath, "utf-8");
+
+        
+    // Create a new user object
+    const newUser = {
+        tahajjud,
+        ayat,
+        zikir,
+        ishraq,
+        jamat,
+        sirat,
+        Dua,
+        ilm,
+        tasbih,
+        dayeeAmol,
+        amoliSura,
+        ayamroja,
+        hijbulBahar,
+      };
+  
+
+  }
+  catch(error){
+    console.log(error);
+
+  }
+    
+}
+
