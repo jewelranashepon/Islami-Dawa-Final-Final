@@ -74,7 +74,7 @@ const Dashboard = () => {
           {/* Tab Content */}
           <TabsContent value="Amolimusahaba">
             <div className="bg-gray-50 rounded shadow">
-              {/* <FinalReportTable /> */}
+              <FinalReportTable />
               {/* <FinalReportTable/> */}
             </div>
           </TabsContent>
