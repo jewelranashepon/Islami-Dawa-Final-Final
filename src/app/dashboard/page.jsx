@@ -4,8 +4,8 @@ import Dashboard from "@/components/Dashboard";
 const ClintDashboard = () => {
   return (
     <div>
-      {/* <Dashboard /> */}
-      <CombineDashboard />
+      <Dashboard />
+      {/* <CombineDashboard /> */}
     </div>
   );
 };

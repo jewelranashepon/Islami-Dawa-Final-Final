@@ -27,6 +27,7 @@ import { useSelectedUser } from "@/providers/treeProvider";
 import ReportTable from "@/components/ReportTableMonthly";
 
 import { aggregateUserData } from "@/components/MergedFunction";
+import TallyDataTable from "@/components/TallyDataTable";
 
 const Dashboard = () => {
   const { selectedUser } = useSelectedUser();
@@ -372,9 +373,13 @@ const Dashboard = () => {
         ))}
       </div>
 
-      <div className="border rounded-lg">
-        <ReportTable />
+      <div className="border">
+        <TallyDataTable tallyData={dashboardData.TallyData[0].data} />
       </div>
+
+      {/* <div className="border rounded-lg">
+        <ReportTable />
+      </div> */}
     </div>
   );
 };

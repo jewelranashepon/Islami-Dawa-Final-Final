@@ -8,8 +8,7 @@ import fileDownload from "js-file-download";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-const ReportTable = () => {
-  // const [tableData, setTableData] = useState([]);
+const ReportTable = ({ tallyData }) => {
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [monthName, setMonth] = useState("");
 
