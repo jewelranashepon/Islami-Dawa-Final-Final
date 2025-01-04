@@ -30,7 +30,7 @@ export async function POST(req) {
     // Check if the user exists in userData
     const user = userData[email];
 
-    if (!user || user.category !== role) {
+    if (!user || user.role !== role) {
       console.log("No user found with the provided email and role.");
       const response = new Response("Invalid credentials", { status: 401 });
       setCorsHeaders(response);
@@ -52,7 +52,7 @@ export async function POST(req) {
         message: `Welcome ${role}!`,
         user: {
           email: user.email,
-          role: user.category, // Assuming the role is stored as 'category' in userData
+          role: user.role, // Assuming the role is stored as 'category' in userData
           name: user.name,
           id: user.id,
         },

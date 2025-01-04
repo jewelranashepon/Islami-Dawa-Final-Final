@@ -9,6 +9,8 @@ import dynamic from "next/dynamic";
 import TallyDataTable from "./TallyDataTable";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./TabButton";
 import FinalReportTable from "./FinalReportTable";
+import { userAmoliData } from "@/app/data/amoliMuhasabaUserData";
+import AmoliTableShow from "./AmoliTableShow";
 
 const Dashboard = () => {
   const userEmail =
@@ -19,43 +21,47 @@ const Dashboard = () => {
   // console.log("Dashboard:", dashboardData.TallyData[0].data);
   // return;
 
-  if (!dashboardData) {
-    return (
-      <div className="flex justify-center items-center h-full">
-        <p>No data available for the current user.</p>
-      </div>
-    );
-  }
+  // if (!dashboardData) {
+  //   return (
+  //     <div className="flex justify-center items-center h-full">
+  //       <p>No data available for the current user.</p>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
-      <div className="flex">
-        <div className="grow grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 pb-4 pt-2">
-          <AmoliChart
-            data={dashboardData?.AmoliChartData || []}
-            innerRadius={70}
-            outerRadius={115}
-            startAngle={90}
-            endAngle={450}
-          />
+      {/* Dashboard Section */}
+      {dashboardData ? (
+        <div className="flex">
+          <div className="grow grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 pb-4 pt-2">
+            <AmoliChart
+              data={dashboardData?.AmoliChartData || []}
+              innerRadius={70}
+              outerRadius={115}
+              startAngle={90}
+              endAngle={450}
+            />
 
-          <TalimDonutChart
-            data1={dashboardData?.TalimDonutChartData1 || []}
-            data2={dashboardData?.TalimDonutChartData2 || []}
-            innerRadius={50}
-            outerRadius={90}
-            startAngle={90}
-            endAngle={450}
-          />
+            <TalimDonutChart
+              data1={dashboardData?.TalimDonutChartData1 || []}
+              data2={dashboardData?.TalimDonutChartData2 || []}
+              innerRadius={50}
+              outerRadius={90}
+              startAngle={90}
+              endAngle={450}
+            />
 
-          {dashboardData?.TallyData?.map((data, index) => (
-            <Tally key={index} data={data} />
-          )) || <p>No Tally data available</p>}
+            {dashboardData?.TallyData?.map((data, index) => (
+              <Tally key={index} data={data} />
+            )) || <p>No Tally data available</p>}
+          </div>
         </div>
-      </div>
-      {/* <div className="border">
-        <TallyDataTable tallyData={dashboardData.TallyData[0].data} />
-      </div> */}
+      ) : (
+        <div className="flex justify-center items-center h-full">
+          <p>No data available for the current user.</p>
+        </div>
+      )}
 
       <div className="border border-[#155E75] overflow-y-auto">
         <Tabs defaultValue="Amolimusahaba" className="w-full p-4">
@@ -74,15 +80,16 @@ const Dashboard = () => {
           {/* Tab Content */}
           <TabsContent value="Amolimusahaba">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              {/* <FinalReportTable /> */}
               {/* <FinalReportTable/> */}
+              <AmoliTableShow userData={userAmoliData} />
             </div>
           </TabsContent>
           <TabsContent value="moktob">
             <div className="bg-gray-50 rounded shadow">
               {/* <FinalReportTable /> */}
               <div className="border">
-                <TallyDataTable tallyData={dashboardData.TallyData[0].data} />
+                {/* <TallyDataTable tallyData={dashboardData.TallyData[0].data} /> */}
               </div>
             </div>
           </TabsContent>

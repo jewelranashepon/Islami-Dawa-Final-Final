@@ -2,7 +2,7 @@ export const userData = {
   "jewelranashepon@gmail.com": {
     "id": 6,
     "name": "Jewel Rana",
-    "category": "centraladmin",
+    "role": "centraladmin",
     "division": "50_রাজশাহী",
     "district": "76_পাবনা",
     "upazila": "116_পাবনা সদর",
@@ -15,7 +15,7 @@ export const userData = {
   "jewel@gmail.com": {
     "id": 7,
     "name": "Jewel Rana Shepon",
-    "category": "daye",
+    "role": "daye",
     "division": "50_রাজশাহী",
     "district": "76_পাবনা",
     "upazila": "116_পাবনা সদর",
@@ -28,7 +28,7 @@ export const userData = {
   "faysal@gmail.com": {
     "id": 8,
     "name": "Faysal",
-    "category": "daye",
+    "role": "daye",
     "division": "20_চট্টগ্রাম",
     "district": "19_কুমিল্লা",
     "upazila": "11_কুমিল্লা সদর",
@@ -41,7 +41,7 @@ export const userData = {
   "zisan@gmail.com": {
     "id": 9,
     "name": "Zisan",
-    "category": "unionadmin",
+    "role": "unionadmin",
     "division": "50_রাজশাহী",
     "district": "10_বগুড়া",
     "upazila": "128_নন্দিগ্রাম",
@@ -54,7 +54,7 @@ export const userData = {
   "tauhid@gmail.com": {
     "id": 10,
     "name": "Tauhid",
-    "category": "unionadmin",
+    "role": "unionadmin",
     "division": "50_রাজশাহী",
     "district": "76_পাবনা",
     "upazila": "113_সুজানগর",
@@ -67,7 +67,7 @@ export const userData = {
   "rifat@gmail.com": {
     "id": 11,
     "name": "Rifat",
-    "category": "upozilaadmin",
+    "role": "upozilaadmin",
     "division": "30_ঢাকা",
     "district": "26_ঢাকা",
     "upazila": "493_ঢাকা উত্তর সিটি কর্পোরেশন",
@@ -80,7 +80,7 @@ export const userData = {
   "toyon@gmail.com": {
     "id": 12,
     "name": "Toyon",
-    "category": "districtadmin",
+    "role": "districtadmin",
     "division": "30_ঢাকা",
     "district": "26_ঢাকা",
     "upazila": "493_ঢাকা উত্তর সিটি কর্পোরেশন",
@@ -93,7 +93,7 @@ export const userData = {
   "estiak@gmail.com": {
     "id": 13,
     "name": "Estiak Ahmed",
-    "category": "divisionadmin",
+    "role": "divisionadmin",
     "division": "45_ময়মনসিংহ",
     "district": "39_জামালপুর",
     "upazila": "475_জামালপুর সদর",
@@ -106,7 +106,7 @@ export const userData = {
   "moni@gmail.com": {
     "id": 14,
     "name": "Moni",
-    "category": "centraladmin",
+    "role": "centraladmin",
     "division": "50_রাজশাহী",
     "district": "76_পাবনা",
     "upazila": "116_পাবনা সদর",
@@ -119,7 +119,7 @@ export const userData = {
   "ratul@gmail.com": {
     "id": 15,
     "name": "Ratul Hossain",
-    "category": "divisionadmin",
+    "role": "divisionadmin",
     "division": "50_রাজশাহী",
     "district": "76_পাবনা",
     "upazila": "116_পাবনা সদর",
@@ -132,7 +132,7 @@ export const userData = {
   "hridoy@gmail.com": {
     "id": 16,
     "name": "Hridoy",
-    "category": "districtadmin",
+    "role": "districtadmin",
     "division": "20_চট্টগ্রাম",
     "district": "15_চট্টগ্রাম",
     "upazila": "78_রাউজান",
@@ -145,7 +145,7 @@ export const userData = {
   "user1@gmail.com": {
     "id": 1735359477056,
     "name": "User1",
-    "category": "daye",
+    "role": "daye",
     "division": "40_খুলনা",
     "district": "50_কুষ্টিয়া",
     "upazila": "196_কুষ্টিয়া সদর",
@@ -158,7 +158,7 @@ export const userData = {
   "user2@gmail.com": {
     "id": 1735360261066,
     "name": "User2",
-    "category": "daye",
+    "role": "daye",
     "division": "45_ময়মনসিংহ",
     "district": "72_নেত্রকোণা",
     "upazila": "487_খালিয়াজুরী",
@@ -171,7 +171,7 @@ export const userData = {
   "abc@gmail.com": {
     "id": 1735360901918,
     "name": "ABC",
-    "category": "daye",
+    "role": "daye",
     "division": "50_রাজশাহী",
     "district": "81_রাজশাহী",
     "upazila": "136_মোহনপুর",
@@ -180,5 +180,18 @@ export const userData = {
     "phone": "0123456789",
     "email": "abc@gmail.com",
     "passwordHash": "$2b$10$uyZEBD/s6ZLhkuXIsf77Xu/bk8GOUmCPIatzWmee9JrarFAeD/QNS"
+  },
+  "messi@gmail.com": {
+    "id": 1735810892052,
+    "name": "Messi",
+    "role": "daye",
+    "division": "50_রাজশাহী",
+    "district": "69_নাটোর",
+    "upazila": "143_নাটোর সদর",
+    "union": "1293_লক্ষীপুর খোলাবাড়িয়া",
+    "area": "Natore",
+    "phone": "0123456789",
+    "email": "messi@gmail.com",
+    "passwordHash": "$2b$10$kEFg2TpkjAvIqYGBcS3efu.tSUVm2ylcCEtxfW0Ado6RdQeDDEQky"
   }
 };

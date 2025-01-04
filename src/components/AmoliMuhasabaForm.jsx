@@ -27,20 +27,36 @@ const AmoliMuhasabaForm = () => {
         initialValues={initialFormData}
         validationSchema={validationSchema}
         onSubmit={async (values) => {
+          // Retrieve email from localStorage
+          const email = localStorage.getItem("userEmail");
+          
+          // Check if email is available
+          if (!email) {
+            alert("User email is not set. Please log in.");
+            return;
+          }
+        
+          // Include email in the form data
+          const formData = { ...values, email };
+        
+          // Send form data to the API
           const response = await fetch("/api/amoli", {
             method: "POST",
-            body: JSON.stringify(values),
+            body: JSON.stringify(formData),
             headers: {
               "Content-Type": "application/json",
             },
           });
+        
+          // Handle API response
           if (response.ok) {
             router.push("/dashboard");
-            alert("Form Submission successfully!");
+            alert("Form submission successful!");
           } else {
-            alert("Form submission Faild! Try Again!");
+            alert("Form submission failed! Try again.");
           }
-          console.log(values);
+        
+          console.log(formData);
         }}
         
       >
@@ -52,7 +68,7 @@ const AmoliMuhasabaForm = () => {
                   <label className="mb-2 block text-gray-700">তাহাজ্জুদ </label>
                   <Field
                     name="tahajjud"
-                    placeholder=" কত রাকাত"
+                    placeholder="কত রাকাত"
                     className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
                   />
                   <ErrorMessage
@@ -196,7 +212,6 @@ const AmoliMuhasabaForm = () => {
 
                 <div>
                   <label className="mb-2 block text-gray-700">
-                    {" "}
                     ইলমী ও আমলী কিতাব পাঠ
                   </label>
                   <Field

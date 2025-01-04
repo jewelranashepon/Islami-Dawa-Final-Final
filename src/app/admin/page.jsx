@@ -31,6 +31,8 @@ import TallyDataTable from "@/components/TallyDataTable";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/TabButton";
 import FinalReportTable from "@/components/FinalReportTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/TabButton";
+import {  userAmoliData } from "../data/amoliMuhasabaUserData";
+
 
 const Dashboard = () => {
   const { selectedUser } = useSelectedUser();
@@ -348,6 +350,14 @@ const Dashboard = () => {
   } else {
     dashboardData = allData[selectedUser];
   }
+
+  if (!dashboardData) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <p>No data available for the current user.</p>
+      </div>
+    );
+  }
   // return null;
 
   return (
@@ -402,6 +412,9 @@ const Dashboard = () => {
             <div className="bg-gray-50 rounded shadow">
               {/* <FinalReportTable /> */}
               {/* <FinalReportTable/> */}
+              {/* <div className="border">
+                <TallyDataTable tallyData={userAmoliData["jewel@gmail.com"]} />
+              </div> */}
             </div>
           </TabsContent>
           <TabsContent value="moktob">

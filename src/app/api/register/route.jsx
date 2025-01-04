@@ -61,7 +61,7 @@ export async function POST(req) {
     const newUser = {
       id: Date.now(), // Or use a unique ID generator
       name,
-      category: role, // Assuming 'role' corresponds to 'category'
+      role, // Assuming 'role' corresponds to 'category'
       division,
       district,
       upazila,
