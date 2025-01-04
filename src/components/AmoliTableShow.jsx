@@ -114,21 +114,9 @@ const AmoliTableShow = ({ userData }) => {
   const [loading, setLoading] = useState(true);
 
   // Map for translating labels to Bangla
-  const labelMap = {
-    tahajjud: "তাহাজ্জুদ",
-    ayat: "আয়াত",
-    zikir: "জিকির",
-    ishraq: "ইশরাক",
-    jamat: "জামাত",
-    sirat: "সিরাত",
-    Dua: "দুআ",
-    ilm: "ইলম",
-    tasbih: "তসবিহ",
-    dayeeAmol: "দায়ী আমল",
-    amoliSura: "আমলি সুরা",
-    ayamroja: "আয়াম রোজা",
-    hijbulBahar: "হিজবুল বাহার",
-  };
+
+  // console.log("UserData:", userData.labelMap);
+  // return;
 
   useEffect(() => {
     const today = new Date();
@@ -150,9 +138,13 @@ const AmoliTableShow = ({ userData }) => {
     const email = localStorage.getItem("userEmail");
     setUserEmail(email);
 
+    const labels = userData.labelMap;
+    console.log("Labels:", labels);
+    // return;
+
     // Generate table data based on labelMap and userData
-    const transposed = Object.keys(labelMap).map((label) => {
-      const row = { label: labelMap[label] || label }; // Translate label to Bangla if possible
+    const transposed = Object.keys(labels).map((label) => {
+      const row = { label: labels[label] }; // Translate label to Bangla if possible
       daysArray.forEach((day) => {
         // Format the date as YYYY-MM-DD
         const date = `${currentYear}-${(currentMonth + 1)

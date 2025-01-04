@@ -79,7 +79,7 @@ const AmoliMuhasabaForm = () => {
                 </div>
                 <div>
                   <label className="mb-2 block text-gray-700">
-                    তিলাওয়াতুল কোরয়আন তাদাব্বুর
+                    তিলাওয়াতুল কোরআন তাদাব্বুর
                   </label>
                   <Field
                     as="select"
@@ -300,7 +300,7 @@ const AmoliMuhasabaForm = () => {
 
                 <div>
                   <label className="mb-2 block text-gray-700">
-                    আজ সোমবার আইয়্যামে বীজের রোজা রেখেছেন তো?{" "}
+                    আজ সোমবার আইয়্যামে বীজের রোজা রেখেছেন তো?
                   </label>
                   <Field
                     as="select"

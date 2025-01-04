@@ -11,6 +11,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "./TabButton";
 import FinalReportTable from "./FinalReportTable";
 import { userAmoliData } from "@/app/data/amoliMuhasabaUserData";
 import AmoliTableShow from "./AmoliTableShow";
+import { userMoktobBisoyData } from "@/app/data/moktobBisoyUserData";
 
 const Dashboard = () => {
   const userEmail =
@@ -80,17 +81,19 @@ const Dashboard = () => {
           {/* Tab Content */}
           <TabsContent value="Amolimusahaba">
             <div className="bg-gray-50 rounded shadow">
-              {/* <FinalReportTable /> */}
-              {/* <FinalReportTable/> */}
               <AmoliTableShow userData={userAmoliData} />
             </div>
           </TabsContent>
           <TabsContent value="moktob">
             <div className="bg-gray-50 rounded shadow">
-              {/* <FinalReportTable /> */}
-              <div className="border">
-                {/* <TallyDataTable tallyData={dashboardData.TallyData[0].data} /> */}
-              </div>
+              {/* <div className="border">
+                {dashboardData?.TallyData ? (
+                  <TallyDataTable tallyData={dashboardData.TallyData[0].data} />
+                ) : (
+                  <p>No Tally data available</p>
+                )}
+              </div> */}
+              <AmoliTableShow userData={userMoktobBisoyData} />
             </div>
           </TabsContent>
           <TabsContent value="talim">
