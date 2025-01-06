@@ -2,12 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { initialFormData, validationSchema } from "@/app/data/DawatiData";
+import { useRouter } from "next/navigation";
 
 const DawatiForm = () => {
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Form Data:", values);
-    resetForm();
-  };
+  let router = useRouter();
 
   return (
     <div className="w-full mx-auto mt-8  rounded bg-white p-10 shadow-lg">
@@ -15,7 +13,38 @@ const DawatiForm = () => {
       <Formik
         initialValues={initialFormData}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={async (values) => {
+          // Retrieve email from localStorage
+          const email = localStorage.getItem("userEmail");
+
+          // Check if email is available
+          if (!email) {
+            alert("User email is not set. Please log in.");
+            return;
+          }
+
+          // Include email in the form data
+          const formData = { ...values, email };
+
+          // Send form data to the API
+          const response = await fetch("/api/dawati", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          // Handle API response
+          if (response.ok) {
+            alert("Form submission successful!");
+            router.push("/dashboard");
+          } else {
+            alert("Form submission failed! Try again.");
+          }
+
+          console.log(formData);
+        }}
       >
         <Form>
           <div className="grid grid-cols-2 gap-5">

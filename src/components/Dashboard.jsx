@@ -14,13 +14,14 @@ import AmoliTableShow from "./AmoliTableShow";
 import { userMoktobBisoyData } from "@/app/data/moktobBisoyUserData";
 import { userTalimData } from "@/app/data/talimBisoyUserData";
 import { userDayeData } from "@/app/data/dayiUserData";
+import { userDawatiBisoyData } from "@/app/data/dawatiBisoyUserData";
+import { userDawatiMojlishData } from "@/app/data/dawatiMojlishUserData";
 
 const Dashboard = () => {
   const userEmail =
     typeof window !== "undefined" ? localStorage.getItem("userEmail") : null;
 
   let dashboardData = userEmail ? allData[userEmail] : null;
-
 
   return (
     <div>
@@ -83,23 +84,22 @@ const Dashboard = () => {
           </TabsContent>
           <TabsContent value="talim">
             <div className="bg-gray-50 rounded shadow">
-            <AmoliTableShow userData={userTalimData} />
+              <AmoliTableShow userData={userTalimData} />
             </div>
           </TabsContent>
           <TabsContent value="daye">
             <div className="bg-gray-50 rounded shadow">
-              {/* <FinalReportTable /> */}
               <AmoliTableShow userData={userDayeData} />
             </div>
           </TabsContent>
           <TabsContent value="dawati">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              <AmoliTableShow userData={userDawatiBisoyData} />
             </div>
           </TabsContent>
           <TabsContent value="dawatimojlish">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              <AmoliTableShow userData={userDawatiMojlishData} />
             </div>
           </TabsContent>
           <TabsContent value="jamat">
