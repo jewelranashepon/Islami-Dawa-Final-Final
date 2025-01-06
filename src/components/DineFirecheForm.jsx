@@ -1,14 +1,11 @@
-
 "use client";
 import { Button } from "@/components/ui/button";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { initialFormData, validationSchema } from "@/app/data/DineFirecheData";
+import { useRouter } from "next/navigation";
 
 const DineFirecheForm = () => {
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Form Data:", values);
-    resetForm();
-  };
+  let router = useRouter();
 
   return (
     <div className="mx-auto mt-8 w-full rounded bg-white p-10 shadow-lg">
@@ -16,7 +13,40 @@ const DineFirecheForm = () => {
       <Formik
         initialValues={initialFormData}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={async (values) => {
+          // Retrieve email from localStorage
+          const email = localStorage.getItem("userEmail");
+
+          // Check if email is available
+          if (!email) {
+            alert("User email is not set. Please log in.");
+            return;
+          }
+
+          // Include email in the form data
+          const formData = { ...values, email };
+
+          // Send form data to the API
+          const response = await fetch("/api/dinefera", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          console.log("response", response);
+
+          // Handle API response
+          if (response.ok) {
+            router.push("/dashboard");
+            alert("Form submission successful!");
+          } else {
+            alert("Form submission failed! Try again.");
+          }
+
+          console.log(formData);
+        }}
       >
         <Form>
           <div className="grid grid-cols-2 gap-10">
@@ -25,102 +55,35 @@ const DineFirecheForm = () => {
                 অমুসলিম কালেমা পড়ে মুসলমান হয়েছে
               </label>
               <Field
-                name="Omuslim"
-                placeholder="Enter value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-              <ErrorMessage
-                name="Omuslim"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-gray-700">
-                অমুসলিম কালেমা পড়ে মুসলমান হয়েছে
-              </label>
-              <Field
-                name="KalemaPoreche"
+                name="omuslimKalemaPoreche"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="KalemaPoreche"
+                name="omuslimKalemaPoreche"
+                component="div"
+                className="text-red-500"
+              />
+            </div>
+            <div>
+              <label className="mb-2 block text-gray-700">
+                মুরতাদ কালেমা পড়ে ইসলামে ফিরে এসেছে
+              </label>
+              <Field
+                name="murtadDineFireasa"
+                placeholder="Enter Value"
+                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
+              />
+
+              <ErrorMessage
+                name="murtadDineFireasa"
                 component="div"
                 className="text-red-500"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="mb-2 block text-gray-700">
-                দাওয়াত প্রশিক্ষণ কর্মশালার আয়োজন হয়েছে
-              </label>
-              <Field
-                name="DawatProsikkhon"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-              <ErrorMessage
-                name="DawatProsikkhon"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-gray-700">
-                মুরতাদ কালেমা পড়ে ইসলামী ফিরে এসেছে
-              </label>
-              <Field
-                name="Murtad"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-
-              <ErrorMessage
-                name="Murtad"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="mb-2 block text-gray-700">
-                মুরতাদ কালেমা পড়ে ইসলামী ফিরে এসেছে
-              </label>
-              <Field
-                name="IslamEFireche"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-              <ErrorMessage
-                name="IslamEFireche"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-gray-700">
-                ধর্ম সবার আয়োজন হয়েছে
-              </label>
-              <Field
-                name="DhormoSova"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-
-              <ErrorMessage
-                name="DhormoSova"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-          </div>
+          
           <div className="flex justify-end">
             <Button variant="ghost" size="default" type="submit">
               Submit

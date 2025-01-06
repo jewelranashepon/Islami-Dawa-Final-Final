@@ -16,6 +16,9 @@ import { userTalimData } from "@/app/data/talimBisoyUserData";
 import { userDayeData } from "@/app/data/dayiUserData";
 import { userDawatiBisoyData } from "@/app/data/dawatiBisoyUserData";
 import { userDawatiMojlishData } from "@/app/data/dawatiMojlishUserData";
+import { userJamatBisoyUserData } from "@/app/data/jamatBisoyUserData";
+import { userDineFeraData } from "@/app/data/dineferaUserData";
+import { userSoforBisoyData } from "@/app/data/userSoforBisoyData";
 
 const Dashboard = () => {
   const userEmail =
@@ -104,17 +107,19 @@ const Dashboard = () => {
           </TabsContent>
           <TabsContent value="jamat">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              <AmoliTableShow userData={userJamatBisoyUserData} />
             </div>
           </TabsContent>
           <TabsContent value="dinefera">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              {/* <FinalReportTable /> */}
+              <AmoliTableShow userData={userDineFeraData} />
             </div>
           </TabsContent>
           <TabsContent value="sofor">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              {/* <FinalReportTable /> */}
+              <AmoliTableShow userData={userSoforBisoyData} />
             </div>
           </TabsContent>
         </Tabs>
