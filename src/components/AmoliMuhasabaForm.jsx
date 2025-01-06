@@ -29,16 +29,16 @@ const AmoliMuhasabaForm = () => {
         onSubmit={async (values) => {
           // Retrieve email from localStorage
           const email = localStorage.getItem("userEmail");
-          
+
           // Check if email is available
           if (!email) {
             alert("User email is not set. Please log in.");
             return;
           }
-        
+
           // Include email in the form data
           const formData = { ...values, email };
-        
+
           // Send form data to the API
           const response = await fetch("/api/amoli", {
             method: "POST",
@@ -47,7 +47,9 @@ const AmoliMuhasabaForm = () => {
               "Content-Type": "application/json",
             },
           });
-        
+
+          console.log("response", response);
+
           // Handle API response
           if (response.ok) {
             router.push("/dashboard");
@@ -55,10 +57,9 @@ const AmoliMuhasabaForm = () => {
           } else {
             alert("Form submission failed! Try again.");
           }
-        
+
           console.log(formData);
         }}
-        
       >
         {({ handleSubmit }) => {
           return (

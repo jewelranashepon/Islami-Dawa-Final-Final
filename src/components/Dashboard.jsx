@@ -12,6 +12,8 @@ import FinalReportTable from "./FinalReportTable";
 import { userAmoliData } from "@/app/data/amoliMuhasabaUserData";
 import AmoliTableShow from "./AmoliTableShow";
 import { userMoktobBisoyData } from "@/app/data/moktobBisoyUserData";
+import { userTalimData } from "@/app/data/talimBisoyUserData";
+import { userDayeData } from "@/app/data/dayiUserData";
 
 const Dashboard = () => {
   const userEmail =
@@ -19,16 +21,6 @@ const Dashboard = () => {
 
   let dashboardData = userEmail ? allData[userEmail] : null;
 
-  // console.log("Dashboard:", dashboardData.TallyData[0].data);
-  // return;
-
-  // if (!dashboardData) {
-  //   return (
-  //     <div className="flex justify-center items-center h-full">
-  //       <p>No data available for the current user.</p>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div>
@@ -86,24 +78,18 @@ const Dashboard = () => {
           </TabsContent>
           <TabsContent value="moktob">
             <div className="bg-gray-50 rounded shadow">
-              {/* <div className="border">
-                {dashboardData?.TallyData ? (
-                  <TallyDataTable tallyData={dashboardData.TallyData[0].data} />
-                ) : (
-                  <p>No Tally data available</p>
-                )}
-              </div> */}
               <AmoliTableShow userData={userMoktobBisoyData} />
             </div>
           </TabsContent>
           <TabsContent value="talim">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+            <AmoliTableShow userData={userTalimData} />
             </div>
           </TabsContent>
           <TabsContent value="daye">
             <div className="bg-gray-50 rounded shadow">
-              <FinalReportTable />
+              {/* <FinalReportTable /> */}
+              <AmoliTableShow userData={userDayeData} />
             </div>
           </TabsContent>
           <TabsContent value="dawati">

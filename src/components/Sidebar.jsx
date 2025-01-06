@@ -30,7 +30,7 @@ const Sidebar = () => {
   return (
     <aside
       className={`flex flex-col shrink-0 h-full ${
-        isCollapsed ? "w-[68px]" : "w-52"
+        isCollapsed ? "w-[68px]" : "w-56"
       } transition-width duration-500 bg-[#155E75] overflow-x-hidden border-t border-slate-700`}
     >
       <div className="p-4 text-right">

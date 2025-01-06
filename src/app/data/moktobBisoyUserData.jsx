@@ -59,6 +59,92 @@ export const userMoktobBisoyData = {
       "TotalAgeSikkha": "8",
       "MadrasahAdmit": "70",
       "NewMuslim": "9"
+    },
+    "2025-01-05": {
+      "MoktobChalu": "2",
+      "MoktobAdmit": "4",
+      "NewMoktob": "3",
+      "Sikkha": "5",
+      "TotalStudent": "4",
+      "TotalSikkha": "4",
+      "GurdianMeeting": "5",
+      "TotalAgeSikkha": "4",
+      "MadrasahAdmit": "5",
+      "NewMuslim": "4"
+    }
+  },
+  "jewel@gmail.com": {
+    "2025-01-01": {
+      "MoktobChalu": "2",
+      "MoktobAdmit": "4",
+      "NewMoktob": "3",
+      "Sikkha": "5",
+      "TotalStudent": "4",
+      "TotalSikkha": "4",
+      "GurdianMeeting": "5",
+      "TotalAgeSikkha": "4",
+      "MadrasahAdmit": "5",
+      "NewMuslim": "4"
+    },
+    "2025-01-02": {
+      "MoktobChalu": "1",
+      "MoktobAdmit": "4",
+      "NewMoktob": "3",
+      "Sikkha": "5",
+      "TotalStudent": "4",
+      "TotalSikkha": "4",
+      "GurdianMeeting": "5",
+      "TotalAgeSikkha": "4",
+      "MadrasahAdmit": "5",
+      "NewMuslim": "4"
+    },
+    "2025-01-03": {
+      "MoktobChalu": "1",
+      "MoktobAdmit": "4",
+      "NewMoktob": "3",
+      "Sikkha": "5",
+      "TotalStudent": "4",
+      "TotalSikkha": "4",
+      "GurdianMeeting": "5",
+      "TotalAgeSikkha": "4",
+      "MadrasahAdmit": "5",
+      "NewMuslim": "4"
+    },
+    "2025-01-04": {
+      "MoktobChalu": "10",
+      "MoktobAdmit": "20",
+      "NewMoktob": "30",
+      "Sikkha": "40",
+      "TotalStudent": "50",
+      "TotalSikkha": "60",
+      "GurdianMeeting": "70",
+      "TotalAgeSikkha": "80",
+      "MadrasahAdmit": "90",
+      "NewMuslim": "100"
+    },
+    "2025-01-05": {
+      "MoktobChalu": "50",
+      "MoktobAdmit": "100",
+      "NewMoktob": "150",
+      "Sikkha": "200",
+      "TotalStudent": "250",
+      "TotalSikkha": "300",
+      "GurdianMeeting": "350",
+      "TotalAgeSikkha": "400",
+      "MadrasahAdmit": "450",
+      "NewMuslim": "500"
+    },
+    "2025-01-06": {
+      "MoktobChalu": "50",
+      "MoktobAdmit": "100",
+      "NewMoktob": "150",
+      "Sikkha": "200",
+      "TotalStudent": "250",
+      "TotalSikkha": "300",
+      "GurdianMeeting": "350",
+      "TotalAgeSikkha": "400",
+      "MadrasahAdmit": "450",
+      "NewMuslim": "500"
     }
   }
 };

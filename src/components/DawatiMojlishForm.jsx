@@ -21,18 +21,18 @@ const DawatiMojlishForm = () => {
         onSubmit={handleSubmit}
       >
         <Form>
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-5">
             <div>
               <label className="mb-2 block text-gray-700">
                 দাওয়াতের গুরুত্ব ও প্রয়োজনীয়তা নিয়ে মজলিস হয়েছে
               </label>
               <Field
-                name="DawatMojlish"
+                name="dawatterGuruttoMojlish"
                 placeholder="Enter value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
               <ErrorMessage
-                name="DawatMojlish"
+                name="dawatterGuruttoMojlish"
                 component="div"
                 className="text-red-500"
               />
@@ -43,30 +43,29 @@ const DawatiMojlishForm = () => {
                 দাওয়াতের গুরুত্ব ও প্রয়োজনীয়তা মজলিসে মোট অংশগ্রহণ
               </label>
               <Field
-                name="DawatGurutto"
+                name="mojlisheOnshogrohon"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="DawatGurutto"
+                name="mojlisheOnshogrohon"
                 component="div"
                 className="text-red-500"
               />
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-10">
+
             <div>
               <label className="mb-2 block text-gray-700">
                 দাওয়াত প্রশিক্ষণ কর্মশালার আয়োজন হয়েছে
               </label>
               <Field
-                name="DawatProsikkhon"
+                name="prosikkhonKormoshalaAyojon"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
               <ErrorMessage
-                name="DawatProsikkhon"
+                name="prosikkhonKormoshalaAyojon"
                 component="div"
                 className="text-red-500"
               />
@@ -77,30 +76,29 @@ const DawatiMojlishForm = () => {
                 দাওয়াত প্রশিক্ষণ কর্মশালায় মোট অংশগ্রহণ{" "}
               </label>
               <Field
-                name="DawatKormosala"
+                name="prosikkhonOnshogrohon"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="DawatKormosala"
+                name="prosikkhonOnshogrohon"
                 component="div"
                 className="text-red-500"
               />
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-10">
+
             <div>
               <label className="mb-2 block text-gray-700">
                 জুমার মজলিসে আলোচনা হয়েছে
               </label>
               <Field
-                name="JumarMojlish"
+                name="jummahAlochona"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
               <ErrorMessage
-                name="JumarMojlish"
+                name="jummahAlochona"
                 component="div"
                 className="text-red-500"
               />
@@ -111,13 +109,30 @@ const DawatiMojlishForm = () => {
                 ধর্ম সবার আয়োজন হয়েছে
               </label>
               <Field
-                name="DhormoSova"
+                name="dhormoSova"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="DhormoSova"
+                name="dhormoSova"
+                component="div"
+                className="text-red-500"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-gray-700">
+                দাওয়াতের মাশওয়ারা পয়েন্ট চালু হয়েছে
+              </label>
+              <Field
+                name="mashwaraPoint"
+                placeholder="Enter Value"
+                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
+              />
+
+              <ErrorMessage
+                name="mashwaraPoint"
                 component="div"
                 className="text-red-500"
               />

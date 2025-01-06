@@ -1,8 +1,12 @@
-export const userMoktobBisoyData = {
-    "labelMap": {
-      "MoktobChalu": "নতুন মক্তব চালু হয়েছে",
-      "MoktobAdmit": "মক্তব থেকে ছাত্রছাত্রী মাদ্রাসায় ভর্তি হয়েছে",
-      "NewMoktob": "নতুন পুরাতন মোট মক্তব চালু আছে",
-      "Sikkha": "এই মাসে বয়স্ক কোরআন শিক্ষা চালু হয়েছে",
+export const userTalimData = {
+  "labelMap": {
+    "mohilaTalim": "মহিলাদের মাঝে দ্বীনের তালিম",
+    "TalimOngshoGrohon": "মহিলাদের তালিমে মোট অংশগ্রহণ করেছে"
+  },
+  "jewel@gmail.com": {
+    "2025-01-06": {
+      "mohilaTalim": "10",
+      "TalimOngshoGrohon": "100"
     }
-}
+  }
+};

@@ -24,12 +24,12 @@ const JamatBishoyForm = () => {
                 জামাত বের হয়েছে
               </label>
               <Field
-                name="Jamat"
+                name="jamatBerHoise"
                 placeholder="Enter value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
               <ErrorMessage
-                name="Jamat"
+                name="jamatBerHoise"
                 component="div"
                 className="text-red-500"
               />
@@ -40,86 +40,19 @@ const JamatBishoyForm = () => {
                 জামাতের মোট সাথী ছিল
               </label>
               <Field
-                name="JamatSathi"
+                name="jamatSathi"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="JamatSathi"
+                name="jamatSathi"
                 component="div"
                 className="text-red-500"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="mb-2 block text-gray-700">
-                দাওয়াত প্রশিক্ষণ কর্মশালার আয়োজন হয়েছে
-              </label>
-              <Field
-                name="DawatProsikkhon"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-              <ErrorMessage
-                name="DawatProsikkhon"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
 
-            <div>
-              <label className="mb-2 block text-gray-700">
-                জামাত বের হয়েছে
-              </label>
-              <Field
-                name="jamatBerHoise"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-
-              <ErrorMessage
-                name="jamatBerHoise"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="mb-2 block text-gray-700">
-                জামাতের মোট সাথী ছিল
-              </label>
-              <Field
-                name="Sathi"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-              <ErrorMessage
-                name="Sathi"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-gray-700">
-                ধর্ম সবার আয়োজন হয়েছে
-              </label>
-              <Field
-                name="DhormoSova"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-
-              <ErrorMessage
-                name="DhormoSova"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-          </div>
           <div className="flex justify-end">
             <Button variant="ghost" size="default" type="submit">
               Submit

@@ -18,18 +18,18 @@ const DawatiForm = () => {
         onSubmit={handleSubmit}
       >
         <Form>
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-5">
             <div>
               <label className="mb-2 block text-gray-700">
-                দাওয়াতের গুরুত্ব ও প্রয়োজনীয়তা নিয়ে মজলিস হয়েছে
+                অনুসলিমকে দাওয়াত দেওয়া হয়েছে
               </label>
               <Field
-                name="DawatMojlish"
+                name="nonMuslimDawat"
                 placeholder="Enter value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
               <ErrorMessage
-                name="DawatMojlish"
+                name="nonMuslimDawat"
                 component="div"
                 className="text-red-500"
               />
@@ -37,33 +37,16 @@ const DawatiForm = () => {
 
             <div>
               <label className="mb-2 block text-gray-700">
-                দাওয়াতের গুরুত্ব ও প্রয়োজনীয়তা মজলিসে মোট অংশগ্রহণ
+                মুরতাদ কে দাওয়াত দেওয়া হয়েছে
               </label>
               <Field
-                name="DawatGurutto"
+                name="murtadDawat"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="DawatGurutto"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="mb-2 block text-gray-700">
-                দাওয়াত প্রশিক্ষণ কর্মশালার আয়োজন হয়েছে
-              </label>
-              <Field
-                name="DawatProsikkhon"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-              <ErrorMessage
-                name="DawatProsikkhon"
+                name="murtadDawat"
                 component="div"
                 className="text-red-500"
               />
@@ -71,33 +54,15 @@ const DawatiForm = () => {
 
             <div>
               <label className="mb-2 block text-gray-700">
-                দাওয়াত প্রশিক্ষণ কর্মশালায় মোট অংশগ্রহণ{" "}
+                আলেম উলামার সাথে দাওয়াতি বিষয়ে কথাবার্তা হয়েছে
               </label>
               <Field
-                name="DawatKormosala"
-                placeholder="Enter Value"
-                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
-              />
-
-              <ErrorMessage
-                name="DawatKormosala"
-                component="div"
-                className="text-red-500"
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="mb-2 block text-gray-700">
-                জুমার মজলিসে আলোচনা হয়েছে
-              </label>
-              <Field
-                name="JumarMojlish"
+                name="alemderSatheyMojlish"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
               <ErrorMessage
-                name="JumarMojlish"
+                name="alemderSatheyMojlish"
                 component="div"
                 className="text-red-500"
               />
@@ -105,16 +70,32 @@ const DawatiForm = () => {
 
             <div>
               <label className="mb-2 block text-gray-700">
-                ধর্ম সবার আয়োজন হয়েছে
+                সাধারণ মুসলমানদের সাথে দাওয়াতি বিষয়ে কথাবার্তা হয়েছে
               </label>
               <Field
-                name="DhormoSova"
+                name="publicSatheyMojlish"
                 placeholder="Enter Value"
                 className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
               />
 
               <ErrorMessage
-                name="DhormoSova"
+                name="publicSatheyMojlish"
+                component="div"
+                className="text-red-500"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-gray-700">
+                অমুসলিমদের মাঝে সাপ্তাহিক গাস্ত হয়েছে
+              </label>
+              <Field
+                name="nonMuslimSaptahikGasht"
+                placeholder="Enter Value"
+                className="w-full rounded border border-gray-300 px-4 py-2 mb-3"
+              />
+              <ErrorMessage
+                name="nonMuslimSaptahikGasht"
                 component="div"
                 className="text-red-500"
               />
