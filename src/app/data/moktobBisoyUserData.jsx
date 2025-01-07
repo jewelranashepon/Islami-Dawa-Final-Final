@@ -71,6 +71,18 @@ export const userMoktobBisoyData = {
       "TotalAgeSikkha": "4",
       "MadrasahAdmit": "5",
       "NewMuslim": "4"
+    },
+    "2025-01-06": {
+      "MoktobChalu": "50",
+      "MoktobAdmit": "100",
+      "NewMoktob": "150",
+      "Sikkha": "200",
+      "TotalStudent": "250",
+      "TotalSikkha": "300",
+      "GurdianMeeting": "350",
+      "TotalAgeSikkha": "400",
+      "MadrasahAdmit": "450",
+      "NewMuslim": "500"
     }
   },
   "jewel@gmail.com": {
@@ -134,6 +146,20 @@ export const userMoktobBisoyData = {
       "MadrasahAdmit": "450",
       "NewMuslim": "500"
     },
+    "2025-01-06": {
+      "MoktobChalu": "50",
+      "MoktobAdmit": "100",
+      "NewMoktob": "150",
+      "Sikkha": "200",
+      "TotalStudent": "250",
+      "TotalSikkha": "300",
+      "GurdianMeeting": "350",
+      "TotalAgeSikkha": "400",
+      "MadrasahAdmit": "450",
+      "NewMuslim": "500"
+    }
+  },
+  "faysal@gmail.com": {
     "2025-01-06": {
       "MoktobChalu": "50",
       "MoktobAdmit": "100",

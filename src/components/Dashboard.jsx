@@ -29,38 +29,73 @@ const Dashboard = () => {
   return (
     <div>
       {/* Dashboard Section */}
-      {dashboardData ? (
-        <div className="flex">
-          <div className="grow grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 pb-4 pt-2">
-            <AmoliChart
-              data={dashboardData?.AmoliChartData || []}
-              innerRadius={70}
-              outerRadius={115}
-              startAngle={90}
-              endAngle={450}
-            />
 
-            <TalimDonutChart
-              data1={dashboardData?.TalimDonutChartData1 || []}
-              data2={dashboardData?.TalimDonutChartData2 || []}
-              innerRadius={50}
-              outerRadius={90}
-              startAngle={90}
-              endAngle={450}
-            />
+      <div className="flex">
+        <div className="grow grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 pb-4 pt-2">
+          {dashboardData ? (
+            <>
+              <AmoliChart
+                data={dashboardData?.AmoliChartData || []}
+                innerRadius={70}
+                outerRadius={115}
+                startAngle={90}
+                endAngle={450}
+              />
 
-            {dashboardData?.TallyData?.map((data, index) => (
-              <Tally key={index} data={data} />
-            )) || <p>No Tally data available</p>}
-          </div>
+              <TalimDonutChart
+                data1={dashboardData?.TalimDonutChartData1 || []}
+                data2={dashboardData?.TalimDonutChartData2 || []}
+                innerRadius={50}
+                outerRadius={90}
+                startAngle={90}
+                endAngle={450}
+              />
+            </>
+          ) : (
+            <div className="flex justify-center items-center h-full shadow-lg rounded-lg">
+              <p>No data available for the current user.</p>
+            </div>
+          )}
+
+          <Tally
+            userData={userMoktobBisoyData}
+            email={userEmail}
+            title="Moktob Tally"
+          />
+          <Tally
+            userData={userDawatiBisoyData}
+            email={userEmail}
+            title="Dawati Bisoy Tally"
+          />
+          <Tally
+            userData={userDawatiMojlishData}
+            email={userEmail}
+            title="Dawati Mojlish Tally"
+          />
+          <Tally
+            userData={userJamatBisoyUserData}
+            email={userEmail}
+            title="Jamat Bisoy Tally"
+          />
+          <Tally
+            userData={userDineFeraData}
+            email={userEmail}
+            title="Dine Fire Asa Tally"
+          />
+          <Tally
+            userData={userSoforBisoyData}
+            email={userEmail}
+            title="Sofor Bisoy Tally"
+          />
+          <Tally
+            userData={userDayeData}
+            email={userEmail}
+            title="Daye Bisoy Tally"
+          />
         </div>
-      ) : (
-        <div className="flex justify-center items-center h-full">
-          <p>No data available for the current user.</p>
-        </div>
-      )}
+      </div>
 
-      <div className="border border-[#155E75] overflow-y-auto">
+      <div className="border border-[#155E75] mt-10 rounded-xl overflow-y-auto">
         <Tabs defaultValue="Amolimusahaba" className="w-full p-4">
           <TabsList className="flex justify-center">
             <TabsTrigger value="Amolimusahaba">Amolimusahaba</TabsTrigger>

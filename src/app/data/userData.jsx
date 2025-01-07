@@ -193,5 +193,18 @@ export const userData = {
     "phone": "0123456789",
     "email": "messi@gmail.com",
     "passwordHash": "$2b$10$kEFg2TpkjAvIqYGBcS3efu.tSUVm2ylcCEtxfW0Ado6RdQeDDEQky"
+  },
+  "tushar@gmail.com": {
+    "id": 1736160021007,
+    "name": "Tushar",
+    "role": "daye",
+    "division": "45_ময়মনসিংহ",
+    "district": "39_জামালপুর",
+    "upazila": "475_জামালপুর সদর",
+    "union": "4401_রশিদপুর",
+    "area": "Mirpur",
+    "phone": "0123456789",
+    "email": "tushar@gmail.com",
+    "passwordHash": "$2b$10$M2Vm8ohsd7IkkExg2caS.ebm8Hc1FEXU7/ZSN7XYDb2usawlBjbQm"
   }
 };

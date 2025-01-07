@@ -10,5 +10,19 @@ export const userSoforBisoyData = {
       "moktobVisit": "20",
       "schoolCollegeVisit": "30"
     }
+  },
+  "faysal@gmail.com": {
+    "2025-01-06": {
+      "madrasaVisit": "10",
+      "moktobVisit": "20",
+      "schoolCollegeVisit": "30"
+    }
+  },
+  "tushar@gmail.com": {
+    "2025-01-06": {
+      "madrasaVisit": "10",
+      "moktobVisit": "20",
+      "schoolCollegeVisit": "30"
+    }
   }
 };

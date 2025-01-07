@@ -18,5 +18,16 @@ export const userDawatiMojlishData = {
       "dhormoSova": "6",
       "mashwaraPoint": "7"
     }
+  },
+  "tushar@gmail.com": {
+    "2025-01-06": {
+      "dawatterGuruttoMojlish": "12",
+      "mojlisheOnshogrohon": "26",
+      "prosikkhonKormoshalaAyojon": "10",
+      "prosikkhonOnshogrohon": "55",
+      "jummahAlochona": "5",
+      "dhormoSova": "2",
+      "mashwaraPoint": "6"
+    }
   }
 };

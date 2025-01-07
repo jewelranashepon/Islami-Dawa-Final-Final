@@ -9,6 +9,8 @@ import {
   TabsTrigger,
   TabsContent,
 } from "@/components/TabButton";
+import { userAmoliData } from "@/app/data/amoliMuhasabaUserData";
+import AmoliTableShow from "@/components/AmoliTableShow";
 
 export default function AmoliMuhasaba() {
   const currentDate = new Date().toISOString().split("T")[0];
@@ -42,7 +44,8 @@ export default function AmoliMuhasaba() {
 
             <TabsContent value="monthly">
               <div>
-                <ReportTable />
+                {/* <ReportTable /> */}
+                <AmoliTableShow userData={userAmoliData} />
               </div>
             </TabsContent>
             <TabsContent value="yearly">

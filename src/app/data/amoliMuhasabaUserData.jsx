@@ -246,5 +246,22 @@ export const userAmoliData = {
       "ayamroja": "হ্যাঁ",
       "hijbulBahar": "হ্যাঁ"
     }
+  },
+  "tushar@gmail.com": {
+    "2025-01-06": {
+      "tahajjud": "12",
+      "ayat": "sura Tawba",
+      "zikir": "সকাল",
+      "ishraq": "ইশরাক",
+      "jamat": "4",
+      "sirat": "Hadis",
+      "Dua": " না ",
+      "ilm": "Hadis",
+      "tasbih": "সকাল",
+      "dayeeAmol": "হ্যাঁ",
+      "amoliSura": "হ্যাঁ",
+      "ayamroja": "হ্যাঁ",
+      "hijbulBahar": "হ্যাঁ"
+    }
   }
 };
