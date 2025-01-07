@@ -5,6 +5,9 @@ export const userDayeData = {
   "jewel@gmail.com": {
     "2025-01-06": {
       "sohojogiDayeToiri": "35"
+    },
+    "2025-01-07": {
+      "sohojogiDayeToiri": "10"
     }
   },
   "faysal@gmail.com": {
@@ -18,6 +21,11 @@ export const userDayeData = {
   "tushar@gmail.com": {
     "2025-01-06": {
       "sohojogiDayeToiri": "34"
+    }
+  },
+  "moni@gmail.com": {
+    "2025-01-07": {
+      "sohojogiDayeToiri": "12"
     }
   }
 };

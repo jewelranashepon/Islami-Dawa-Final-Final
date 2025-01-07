@@ -206,5 +206,31 @@ export const userData = {
     "phone": "0123456789",
     "email": "tushar@gmail.com",
     "passwordHash": "$2b$10$M2Vm8ohsd7IkkExg2caS.ebm8Hc1FEXU7/ZSN7XYDb2usawlBjbQm"
+  },
+  "riyad@gmail.com": {
+    "id": 1736248200872,
+    "name": "Riyad",
+    "role": "daye",
+    "division": "50_রাজশাহী",
+    "district": "88_সিরাজগঞ্জ",
+    "upazila": "107_কাজীপুর",
+    "union": "978_শুভগাছা",
+    "area": "Commila",
+    "phone": "0123456789",
+    "email": "riyad@gmail.com",
+    "passwordHash": "$2b$10$B/JndVyvKbQQ93HubpnmlunwYUuVWlfg7cCHFr2W1MGynO1JwspHC"
+  },
+  "nazmul@gmail.com": {
+    "id": 1736248238059,
+    "name": "Nazmul",
+    "role": "daye",
+    "division": "50_রাজশাহী",
+    "district": "76_পাবনা",
+    "upazila": "117_বেড়া",
+    "union": "1067_কৈটোলা",
+    "area": "Commila",
+    "phone": "0123456789",
+    "email": "nazmul@gmail.com",
+    "passwordHash": "$2b$10$m3KdmydKmjLd6L8aoaPQhen0jdRrDmhBZuTyMvSpc/O3SoTjSVxZe"
   }
 };

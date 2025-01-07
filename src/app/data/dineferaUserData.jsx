@@ -7,6 +7,10 @@ export const userDineFeraData = {
     "2025-01-06": {
       "omuslimKalemaPoreche": "10",
       "murtadDineFireasa": "45"
+    },
+    "2025-01-07": {
+      "omuslimKalemaPoreche": "20",
+      "murtadDineFireasa": "20"
     }
   }
 };

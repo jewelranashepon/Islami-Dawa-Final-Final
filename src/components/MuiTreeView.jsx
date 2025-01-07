@@ -100,12 +100,12 @@ export default function OnItemClick() {
                           {
                             id: generateUniqueId(),
                             label: "Ripon",
-                            user: "faysal@gmail.com",
+                            user: "ripon@gmail.com",
                           },
                           {
                             id: generateUniqueId(),
                             label: "Sumon",
-                            user: "jewel@gmail.com",
+                            user: "sumon@gmail.com",
                           },
                         ],
                       },

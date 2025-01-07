@@ -157,6 +157,18 @@ export const userMoktobBisoyData = {
       "TotalAgeSikkha": "400",
       "MadrasahAdmit": "450",
       "NewMuslim": "500"
+    },
+    "2025-01-07": {
+      "MoktobChalu": "50",
+      "MoktobAdmit": "100",
+      "NewMoktob": "150",
+      "Sikkha": "200",
+      "TotalStudent": "250",
+      "TotalSikkha": "300",
+      "GurdianMeeting": "350",
+      "TotalAgeSikkha": "400",
+      "MadrasahAdmit": "450",
+      "NewMuslim": "500"
     }
   },
   "faysal@gmail.com": {
@@ -171,6 +183,34 @@ export const userMoktobBisoyData = {
       "TotalAgeSikkha": "400",
       "MadrasahAdmit": "450",
       "NewMuslim": "500"
+    }
+  },
+  "riyad@gmail.com": {
+    "2025-01-07": {
+      "MoktobChalu": "2",
+      "MoktobAdmit": "5",
+      "NewMoktob": "6",
+      "Sikkha": "74",
+      "TotalStudent": "5",
+      "TotalSikkha": "6",
+      "GurdianMeeting": "4",
+      "TotalAgeSikkha": "6",
+      "MadrasahAdmit": "7",
+      "NewMuslim": "6"
+    }
+  },
+  "nazmul@gmail.com": {
+    "2025-01-07": {
+      "MoktobChalu": "22",
+      "MoktobAdmit": "53",
+      "NewMoktob": "63",
+      "Sikkha": "74",
+      "TotalStudent": "5",
+      "TotalSikkha": "6",
+      "GurdianMeeting": "4",
+      "TotalAgeSikkha": "6",
+      "MadrasahAdmit": "7",
+      "NewMuslim": "6"
     }
   }
 };
