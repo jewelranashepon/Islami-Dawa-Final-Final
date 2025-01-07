@@ -212,5 +212,33 @@ export const userMoktobBisoyData = {
       "MadrasahAdmit": "7",
       "NewMuslim": "6"
     }
+  },
+  "sumon@gmail.com": {
+    "2025-01-07": {
+      "MoktobChalu": "100",
+      "MoktobAdmit": "200",
+      "NewMoktob": "300",
+      "Sikkha": "400",
+      "TotalStudent": "500",
+      "TotalSikkha": "600",
+      "GurdianMeeting": "700",
+      "TotalAgeSikkha": "800",
+      "MadrasahAdmit": "900",
+      "NewMuslim": "1000"
+    }
+  },
+  "moni@gmail.com": {
+    "2025-01-07": {
+      "MoktobChalu": "100",
+      "MoktobAdmit": "200",
+      "NewMoktob": "300",
+      "Sikkha": "400",
+      "TotalStudent": "500",
+      "TotalSikkha": "600",
+      "GurdianMeeting": "700",
+      "TotalAgeSikkha": "800",
+      "MadrasahAdmit": "900",
+      "NewMuslim": "1000"
+    }
   }
 };

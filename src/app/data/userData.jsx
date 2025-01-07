@@ -207,6 +207,19 @@ export const userData = {
     "email": "tushar@gmail.com",
     "passwordHash": "$2b$10$M2Vm8ohsd7IkkExg2caS.ebm8Hc1FEXU7/ZSN7XYDb2usawlBjbQm"
   },
+  "sumon@gmail.com": {
+    "id": 22,
+    "name": "Sumon",
+    "role": "daye",
+    "division": "45_ময়মনসিংহ",
+    "district": "39_জামালপুর",
+    "upazila": "475_জামালপুর সদর",
+    "union": "4401_রশিদপুর",
+    "area": "Mirpur",
+    "phone": "0123456789",
+    "email": "sumon@gmail.com",
+    "passwordHash": "$2b$10$M2Vm8ohsd7IkkExg2caS.ebm8Hc1FEXU7/ZSN7XYDb2usawlBjbQm"
+  },
   "riyad@gmail.com": {
     "id": 1736248200872,
     "name": "Riyad",
@@ -232,5 +245,18 @@ export const userData = {
     "phone": "0123456789",
     "email": "nazmul@gmail.com",
     "passwordHash": "$2b$10$m3KdmydKmjLd6L8aoaPQhen0jdRrDmhBZuTyMvSpc/O3SoTjSVxZe"
+  },
+  "rashid@gmail.com": {
+    "id": 1736252956743,
+    "name": "Rashid Khan",
+    "role": "daye",
+    "division": "20_চট্টগ্রাম",
+    "district": "51_লক্ষ্মীপুর",
+    "upazila": "62_রায়পুর",
+    "union": "595_চর পাতা",
+    "area": "Pabna",
+    "phone": "0123456789",
+    "email": "rashid@gmail.com",
+    "passwordHash": "$2b$10$E4xOhDEdOKUcb7dwVR070uXBj/NHInGlSXiBteuyOb7tBhqb.k0LW"
   }
 };

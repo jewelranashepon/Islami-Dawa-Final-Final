@@ -8,8 +8,10 @@
 //   const [transposedData, setTransposedData] = useState([]);
 //   const [userEmail, setUserEmail] = useState("");
 //   const [loading, setLoading] = useState(true);
-//   const [editCell, setEditCell] = useState(null); // State for tracking the cell being edited
-//   const [newCellValue, setNewCellValue] = useState(""); // State for the new cell value
+//   const [editColumn, setEditColumn] = useState(null); // For column editing
+//   const [columnFormData, setColumnFormData] = useState([]); // Data for column editing
+//   const [editCell, setEditCell] = useState(null); // For cell editing
+//   const [newCellValue, setNewCellValue] = useState(""); // New cell value for editing
 
 //   useEffect(() => {
 //     const today = new Date();
@@ -18,31 +20,24 @@
 
 //     // Calculate total days in the current month
 //     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-//     // Generate array of days (e.g., [1, 2, ..., 31])
 //     const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 //     setMonthDays(daysArray);
 
-//     // Set the month name and year
 //     setMonthName(today.toLocaleString("default", { month: "long" }));
 //     setYear(currentYear);
 
-//     // Get email from localStorage
 //     const email = localStorage.getItem("userEmail");
 //     setUserEmail(email);
 
 //     const labels = userData.labelMap;
 
-//     // Generate table data based on labelMap and userData
 //     const transposed = Object.keys(labels).map((label) => {
-//       const row = { label: labels[label] }; // Translate label to Bangla if possible
+//       const row = { label: labels[label] };
 //       daysArray.forEach((day) => {
-//         // Format the date as YYYY-MM-DD
 //         const date = `${currentYear}-${(currentMonth + 1)
 //           .toString()
 //           .padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
-
-//         row[day] = userData[email]?.[date]?.[label] || "N/A"; // Check if userData exists for that date
+//         row[day] = userData[email]?.[date]?.[label] || "N/A";
 //       });
 //       return row;
 //     });
@@ -51,26 +46,49 @@
 //     setLoading(false);
 //   }, [userData]);
 
-//   // Handle clicking on a cell to edit
-//   const handleEditClick = (rowIndex, day) => {
+//   // Cell Editing Handlers
+//   const handleEditCellClick = (rowIndex, day) => {
 //     const currentValue = transposedData[rowIndex][day];
 //     setEditCell({ rowIndex, day });
 //     setNewCellValue(currentValue);
 //   };
 
-//   // Handle saving the edited value
-//   const handleSaveEdit = () => {
+//   const handleSaveCellEdit = () => {
 //     if (editCell) {
 //       const updatedData = [...transposedData];
-//       updatedData[editCell.rowIndex][editCell.day] = newCellValue; // Update the cell value
+//       updatedData[editCell.rowIndex][editCell.day] = newCellValue;
 //       setTransposedData(updatedData);
-//       setEditCell(null); // Close the edit mode
+//       setEditCell(null);
 //     }
 //   };
 
-//   // Handle canceling the edit
-//   const handleCancelEdit = () => {
-//     setEditCell(null); // Close the edit mode
+//   const handleCancelCellEdit = () => {
+//     setEditCell(null);
+//   };
+
+//   // Column Editing Handlers
+//   const handleColumnEdit = (day) => {
+//     const columnData = transposedData.map((row) => ({
+//       label: row.label,
+//       value: row[day],
+//     }));
+//     setEditColumn(day);
+//     setColumnFormData(columnData);
+//   };
+
+//   const handleColumnInputChange = (index, newValue) => {
+//     setColumnFormData((prev) =>
+//       prev.map((item, i) => (i === index ? { ...item, value: newValue } : item))
+//     );
+//   };
+
+//   const handleSaveColumnEdit = () => {
+//     const updatedData = [...transposedData];
+//     columnFormData.forEach((item, index) => {
+//       updatedData[index][editColumn] = item.value;
+//     });
+//     setTransposedData(updatedData);
+//     setEditColumn(null);
 //   };
 
 //   if (loading) {
@@ -89,7 +107,7 @@
 //             {monthDays.map((day) => (
 //               <th
 //                 key={day}
-//                 className="border border-gray-300 px-6 py-2 text-center whitespace-nowrap"
+//                 className="border border-gray-300 px-6 py-2 text-center whitespace-nowrap relative group"
 //               >
 //                 Day {day}
 //               </th>
@@ -109,7 +127,7 @@
 //                 >
 //                   {row[day]}
 //                   <button
-//                     onClick={() => handleEditClick(rowIndex, day)}
+//                     onClick={() => handleEditCellClick(rowIndex, day)}
 //                     className="absolute top-1/2 right-2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-blue-600"
 //                   >
 //                     ✏️
@@ -119,24 +137,37 @@
 //             </tr>
 //           ))}
 //         </tbody>
+//         <tfoot>
+//           <tr>
+//             <td className="border border-gray-300 px-6 py-2 text-center font-bold"></td>
+//             {monthDays.map((day) => (
+//               <td
+//                 key={day}
+//                 className="border border-gray-300 px-6 py-2 text-center"
+//               >
+//                 <button
+//                   onClick={() => handleColumnEdit(day)}
+//                   className="bg-blue-500 text-white py-1 px-3 rounded"
+//                 >
+//                   Edit
+//                 </button>
+//               </td>
+//             ))}
+//           </tr>
+//         </tfoot>
 //       </table>
 
-//       {/* Edit Modal */}
+//       {/* Cell Edit Modal */}
 //       {editCell && (
 //         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
 //           <div className="bg-white p-6 rounded shadow-lg w-96">
 //             <h3 className="text-lg font-bold mb-4">Edit Cell</h3>
-
 //             <div className="mb-4">
 //               <label className="block text-sm font-medium text-gray-700 mb-2">
 //                 Label: {transposedData[editCell.rowIndex]?.label}
 //               </label>
 //               <label className="block text-sm font-medium text-gray-700 mb-2">
 //                 Day: {editCell.day}
-//               </label>
-//               <label className="block text-sm font-medium text-gray-700 mb-2">
-//                 Previous Value:{" "}
-//                 {transposedData[editCell.rowIndex][editCell.day]}
 //               </label>
 //               <input
 //                 type="text"
@@ -145,17 +176,56 @@
 //                 onChange={(e) => setNewCellValue(e.target.value)}
 //               />
 //             </div>
-
 //             <div className="flex justify-end gap-4">
 //               <button
 //                 className="p-2 bg-gray-300 rounded"
-//                 onClick={handleCancelEdit}
+//                 onClick={handleCancelCellEdit}
 //               >
 //                 Cancel
 //               </button>
 //               <button
 //                 className="p-2 bg-teal-700 text-white rounded"
-//                 onClick={handleSaveEdit}
+//                 onClick={handleSaveCellEdit}
+//               >
+//                 Save
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Column Edit Modal */}
+//       {editColumn && (
+//         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+//           <div className="bg-white p-10 pr-20 rounded-xl shadow-lg w-2/5 max-h-[80vh] overflow-y-auto scrollbar">
+//             <h3 className="text-lg font-bold mb-4">
+//               Edit Column: Day {editColumn}
+//             </h3>
+//             {columnFormData.map((item, index) => (
+//               <div className="mb-4" key={index}>
+//                 <label className="block text-sm font-medium text-gray-700 mb-2">
+//                   {item.label}
+//                 </label>
+//                 <input
+//                   type="text"
+//                   className="border border-gray-300 p-2 w-full"
+//                   value={item.value || ""}
+//                   onChange={(e) =>
+//                     handleColumnInputChange(index, e.target.value)
+//                   }
+//                 />
+//               </div>
+//             ))}
+//             <div className="flex justify-end gap-4">
+//               <button
+//                 className="p-2 bg-gray-300 rounded"
+//                 onClick={() => setEditColumn(null)}
+//               >
+//                 Cancel
+//               </button>
+//               <button
+//                 className="p-2 bg-teal-700 text-white rounded"
+//                 onClick={handleSaveColumnEdit}
 //               >
 //                 Save
 //               </button>
@@ -171,6 +241,9 @@
 
 "use client";
 import React, { useState, useEffect } from "react";
+import fileDownload from "js-file-download";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const AmoliTableShow = ({ userData }) => {
   const [monthDays, setMonthDays] = useState([]);
@@ -262,6 +335,51 @@ const AmoliTableShow = ({ userData }) => {
     setEditColumn(null);
   };
 
+  // CSV Export
+  const convertToCSV = () => {
+    const headers = ["Label", ...monthDays.map((day) => `Day ${day}`)];
+    const rows = transposedData.map((row) => [
+      row.label,
+      ...monthDays.map((day) => row[day]),
+    ]);
+    const csvContent = [
+      headers.join(","),
+      ...rows.map((row) => row.join(",")),
+    ].join("\n");
+    fileDownload(csvContent, "amoli-table.csv");
+  };
+
+  // PDF Export
+  const convertToPDF = () => {
+    const doc = new jsPDF();
+    doc.text(`${monthName} ${year} - User: ${userEmail}`, 14, 10);
+
+    const headers = ["Label", ...monthDays.map((day) => `Day ${day}`)];
+    const rows = transposedData.map((row) => [
+      row.label,
+      ...monthDays.map((day) => row[day]),
+    ]);
+
+    doc.autoTable({
+      head: [headers],
+      body: rows,
+      startY: 20,
+      theme: "striped",
+      headStyles: {
+        fillColor: [22, 160, 133],
+        halign: "center",
+      },
+      bodyStyles: {
+        textColor: 50,
+      },
+      styles: {
+        halign: "center",
+      },
+    });
+
+    doc.save("amoli-table.pdf");
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -271,6 +389,20 @@ const AmoliTableShow = ({ userData }) => {
       <h2 className="text-2xl font-bold text-cyan-800 mb-4">
         {`User: ${userEmail} | Month: ${monthName} ${year}`}
       </h2>
+      <div className="flex justify-end gap-4 mb-4">
+        <button
+          className="p-2 text-white border-2 bg-teal-700 rounded-md"
+          onClick={convertToCSV}
+        >
+          Download CSV
+        </button>
+        <button
+          className="p-2 text-white border-2 bg-teal-700 rounded-md"
+          onClick={convertToPDF}
+        >
+          Download PDF
+        </button>
+      </div>
       <table className="table-auto border-collapse border border-gray-300 w-full text-sm md:text-base">
         <thead>
           <tr className="bg-gray-200">

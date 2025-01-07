@@ -24,5 +24,12 @@ export const userSoforBisoyData = {
       "moktobVisit": "20",
       "schoolCollegeVisit": "30"
     }
+  },
+  "rashid@gmail.com": {
+    "2025-01-07": {
+      "madrasaVisit": "10",
+      "moktobVisit": "20",
+      "schoolCollegeVisit": "30"
+    }
   }
 };
