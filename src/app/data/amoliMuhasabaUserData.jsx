@@ -89,6 +89,21 @@ export const userAmoliData = {
       "amoliSura": " না ",
       "ayamroja": "হ্যাঁ",
       "hijbulBahar": " না "
+    },
+    "2025-01-09": {
+      "tahajjud": "12",
+      "ayat": "sura Yusuf",
+      "zikir": "সকাল/সন্ধ্যা",
+      "ishraq": "ইশরাক",
+      "jamat": "5",
+      "sirat": "Hadis",
+      "Dua": "হ্যাঁ",
+      "ilm": "Daye der amol",
+      "tasbih": "সকাল/সন্ধ্যা",
+      "dayeeAmol": "হ্যাঁ",
+      "amoliSura": "হ্যাঁ",
+      "ayamroja": "হ্যাঁ",
+      "hijbulBahar": "হ্যাঁ"
     }
   },
   "faysal@gmail.com": {
